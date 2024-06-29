@@ -1,0 +1,102 @@
+{%extends 'base1.html'%}
+{%load static%}
+
+{%block product%}
+{%for i in c_data%}
+    <div class="container">
+        <div class="row mt-5 border border-2 shadow">
+            <div class=" col-lg-3">
+                <div class="card mt-3" style="width: 18rem; border-radius: 30px ">
+                    <img src="{{i.product.product_image.url}}" class="card-img-top " alt="..." style="height: 200px;width: 286px; border-radius: 30px;">
+                    
+                  </div>
+                  <a href="{%url 'deletec' i.id%}" class="btn btn-success mb-3 btn-lg"  style="border-radius: 0%; background-color: rgb(255, 98, 0);"><i class="fa-solid fa-bolt"></i>Remove</a>
+                  <button type="button" class="btn btn-success mb-3 btn-lg"  style="border-radius: 0%;"><i class="fa-solid fa-bolt"></i>Buy now</button> 
+
+            </div>  
+
+            <div class="col col-lg-6 mt-3 ">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item"><a href="#">Library</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    </ol>
+                  </nav>
+                
+                    
+                        {{i.product.Product_name}}
+                        <br>
+                        {{i.product.product_description}}
+                        <br>
+                        {{i.product.product_category}}
+                        <p style="font-weight: 500;">1k bought in past month</p>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+
+
+
+                    
+            </div>
+            <div class="col col-lg-3">
+                <div class="card-title mt-5">
+                     
+                        <h2><i class="fa-solid fa-indian-rupee-sign"></i>  {{i.product.product_price}}</h2>
+
+                    
+                    
+                </div>
+        </div>
+           
+                
+    </div>
+    </div>
+
+       {%endfor%}
+       <!-- <div class=" sticky-xxl-bottom border">
+        <div class="row  shadow" style="background-color: rgb(255, 254, 254) ;">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+       <div style="height: 160px; width: 100%;" >
+        <div class="container-fluid">
+        <h4 class="pt-2">Price Details</h4>
+        <hr style="position: relative; bottom: 15px;">
+        <div>
+        <p>price ({{count}} items)</p>
+        <p style="position: absolute; bottom: 15px;">Dicount</p>
+        <p style="position: absolute; bottom: 30px;">Delivery Charges</p>
+        <hr style="position: absolute; bottom: 45px;">
+        <h5 style="position: absolute; bottom: 0px;">Total Amount</h5>
+        </div>
+        </div >
+        <div class="col-lg-6 col-md-6 col-sm-6" >
+        <div style="background-color: rgb(255, 254, 254) ;">
+        <div style="position: absolute; left: 83%; bottom: 38px; ">
+        <h5 class="pb-2"><i class="fa-solid fa-indian-rupee-sign"></i>{{price}}</h5>
+        <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i>-0 RS</p>
+        <p class="text-success"><i class="fa-solid fa-indian-rupee-sign"></i>40 Free Delivery</p>
+        </div>
+        <div>
+            <h5 style="margin-left: 77%;position: absolute; bottom: 120px;"><i class="fa-solid fa-indian-rupee-sign"></i>{{price}}</h5>
+            <a class="btn btn-danger" style="position: absolute; left: 83%; bottom: 70px;" href="">Place Order</a>  
+        </div>
+       </h2> </div>
+    </div>
+</div>
+</div>
+</div>
+</div> -->
+<div class="container-fluid sticky-xxl-bottom">
+    <div class="row">
+        <div class="col col-lg-3">
+            <div class="card" style="width: 94rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock product %}
